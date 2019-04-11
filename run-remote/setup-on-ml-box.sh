@@ -1,7 +1,7 @@
 sudo mkfs.ext4 /dev/sdb && sudo mkdir /vol
 sudo mount /dev/sdb /vol
 sudo mkdir /vol/cuda-10.0
-sudo ln -s /usr/local/cuda-10.0 /vol/cuda/10.0
+sudo ln -s /vol/cuda/10.0 /usr/local/cuda-10.0 
 df -m
 ls -la /usr/local
 
