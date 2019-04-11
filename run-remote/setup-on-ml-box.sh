@@ -1,6 +1,7 @@
 
-
-rm cuda-repo-ubuntu1804_10.0.130-1_amd64.deb* && wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-repo-ubuntu1804_10.0.130-1_amd64.deb
+rm cuda-repo-ubuntu1804_10.0.130-1_amd64.deb*
+wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-repo-ubuntu1804_10.0.130-1_amd64.deb
+sudo dpkg -i ./cuda-repo-ubuntu1804_10.0.130-1_amd64.deb
 sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
 sudo apt-get update && sudo apt-get install -y cuda-10-0
 /snap/bin/gsutil cp gs://akis-mlbox/cudnn-10.0-linux-x64-v7.5.0.56.tgz .
