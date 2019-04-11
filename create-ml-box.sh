@@ -16,5 +16,4 @@ gcloud compute --project=$PROJECT instances create $INSTANCE \
        	--boot-disk-size=30GB \
 	--no-boot-disk-auto-delete \
 	--boot-disk-type=pd-ssd \
-	--boot-disk-device-name=$INSTANCE \
-	--create-disk=mode=rw,size=200,type=projects/$PROJECT/zones/$ZONE/diskTypes/pd-ssd,name=$INSTANCE-vol
+	--boot-disk-device-name=$INSTANCE 
