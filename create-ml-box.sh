@@ -13,7 +13,7 @@ gcloud compute --project=$PROJECT instances create $INSTANCE \
         --accelerator=type=nvidia-tesla-k80,count=1 \
 	--image=ubuntu-1804-bionic-v20190404 \
 	--image-project=ubuntu-os-cloud \
-       	--boot-disk-size=10GB \
+       	--boot-disk-size=30GB \
 	--no-boot-disk-auto-delete \
 	--boot-disk-type=pd-ssd \
 	--boot-disk-device-name=$INSTANCE \
