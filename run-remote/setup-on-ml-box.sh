@@ -1,3 +1,8 @@
+sudo mkfs.ext4 /dev/sdb && sudo mkdir /vol
+sudo mount /dev/sdb /vol
+sudo mkdir /vol/cuda
+sudo ln -s /usr/local/cuda /vol/cuda
+
 
 rm cuda-repo-ubuntu1804_10.0.130-1_amd64.deb*
 wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-repo-ubuntu1804_10.0.130-1_amd64.deb

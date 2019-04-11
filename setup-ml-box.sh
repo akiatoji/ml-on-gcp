@@ -1,8 +1,4 @@
-PROJECT=$(gcloud config get-value project)
-ZONE=us-west1-b
-SERVICE_ACCOUNT=$(gcloud iam service-accounts list | grep -i "compute engine default" | awk '{print$NF}')
-INSTANCE=ml-box
-
+. settings.sh
 declare -a cmd_array=("sudo apt-get -q update && sudo apt-get -q -y upgrade && sudo apt -q -y autoremove" \
 	              "sudo apt-get install -y git" \
 		      "rm -rf ml-on-gcp" \

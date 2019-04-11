@@ -1,10 +1,6 @@
+. settings.sh
 
-PROJECT=$(gcloud config get-value project)
-ZONE=us-west1-b
-SERVICE_ACCOUNT=$(gcloud iam service-accounts list | grep -i "compute engine default" | awk '{print$NF}')
-
-
-gcloud compute --project=$PROJECT instances create ml-box \
+gcloud compute --project=$PROJECT instances create $INSTANCE \
 	--zone=$ZONE \
 	--machine-type=n1-highmem-4 \
 	--subnet=default \
@@ -20,5 +16,5 @@ gcloud compute --project=$PROJECT instances create ml-box \
        	--boot-disk-size=10GB \
 	--no-boot-disk-auto-delete \
 	--boot-disk-type=pd-ssd \
-	--boot-disk-device-name=ml-box
-
+	--boot-disk-device-name=$INSTANCE \
+	--create-disk=mode=rw,size=200,type=projects/$PROJECT/zones/$ZONE/diskTypes/pd-ssd,name=$INSTANCE-vol
