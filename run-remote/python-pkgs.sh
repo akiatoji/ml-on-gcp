@@ -4,4 +4,4 @@ sudo pip3 install beautifulsoup4 gensim nltk seaborn matplotlib tabulate joblib
 sudo pip3 install keras python-levenshtein scikit-learn 
 sudo pip3 install geopy rtree pyproj shapely geojson krb5 fiona folium geopandas
 
-sudo ipython kernel install --user --name py3-ml
+ipython kernel install --user --name py3-ml
