@@ -1,9 +1,5 @@
-#sudo mkfs.ext4 /dev/sdb && sudo mkdir /vol
-#sudo mount /dev/sdb /vol
-#sudo mkdir /vol/cuda-10.0
-#sudo ln -s /vol/cuda/10.0 /usr/local/cuda-10.0 
+echo Setting up environment
 df -m
-#ls -la /usr/local
 
 rm -f cuda-repo-ubuntu1804_10.0.130-1_amd64.deb*
 wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-repo-ubuntu1804_10.0.130-1_amd64.deb
@@ -17,5 +13,7 @@ sudo cp cuda/include/cudnn.h /usr/local/cuda/include/
 rm -rf ~/cuda; rm -f cudnn-10.0-linux-x64-v7.5.0.56.tgz
 sudo apt-get install -y python3-dev python3-pip libcupti-dev
 sudo pip3 install tensorflow-gpu==1.13.1
-/snap/bin/gsutil cp gs://akis-mlbox/tensorflow_check.py . && python3 tensorflow_check.py
 
+python3 run-remote/tensorflow_check.py
+
+. run-remote/python-pkgs.sh
